@@ -35,38 +35,56 @@
 
 #Functions
 
-arr_1 = [5,9,3]
-arr_2 = [2,16,4]
+# arr_1 = [5,9,3]
+# arr_2 = [2,16,4]
 
-def func_0(arr_1, arr_2):
-    index = 0
-    arr_3 = []
-    for i in arr_1:
-        if i < arr_2[index]:
-          arr_3.append(i)
-        else:
-          arr_3.append(arr_2[index])
-        index += 1
-    return arr_3
+# def func_0(arr_1, arr_2):
+#     index = 0
+#     arr_3 = []
+#     for i in arr_1:
+#         if i < arr_2[index]:
+#           arr_3.append(i)
+#         else:
+#           arr_3.append(arr_2[index])
+#         index += 1
+#     return arr_3
 
-print(func_0(arr_1, arr_2))
+# print(func_0(arr_1, arr_2))
 
-arr_1 = [6,3,9]
-arr_2 = [11,2,4]
+# arr_1 = [6,3,9]
+# arr_2 = [11,2,4]
 
-def func_1(arr_1, arr_2):
-    arr_1 == arr_1.sort()
-    arr_2 == arr_2.sort()
-    return func_0(arr_1, arr_2)
-print(func_1(arr_1, arr_2))
+# def func_1(arr_1, arr_2):
+#     arr_1 == arr_1.sort()
+#     arr_2 == arr_2.sort()
+#     return func_0(arr_1, arr_2)
+# print(func_1(arr_1, arr_2))
 
-def func_2(my_string):
-    new_string = ''
-    for i in my_string:
-        new_string += i
-        if i != my_string[-1]:
-            new_string += '->'
-    return(new_string)
+# def func_2(my_string):
+#     new_string = ''
+#     for i in my_string:
+#         new_string += i
+#         if i != my_string[-1]:
+#             new_string += '->'
+#     return(new_string)
 
 
-print(func_2('hello'))
+# print(func_2('hello'))
+
+#Casino Challenge
+
+def get_hand_value(*args):
+    hand_total = 0
+    for arg in args:
+        hand_total = hand_total + arg
+        if arg == 11 and hand_total > 21:
+            hand_total = hand_total - 10
+    if hand_total >21:
+        print("Busted")
+    elif hand_total == 21 and len(args) == 2 and (args[0] == 10 or args[0] == 11):
+        print("Winner Winner Chicken Dinner")
+    else:
+        print(F'The total of the hand is {hand_total}')
+    pass
+
+get_hand_value()
