@@ -7,6 +7,19 @@ class Student:
         else:
             self.courses = courses
 
+    def add_course(self, course):
+        if course not in self.course:
+            self.courses.append(course)
+        else:
+            print(f"{self.first_name} is already enrolled in the {course} course")
+
+    def remove_course(self, course):
+        if course in self.course:
+            self.courses.pop(course)
+        else:
+            print(f"{course} not found.")
+
+
 courses_1 = ['Python', 'Node', 'Javascript']
 course_2 = ['Java', 'Rails', 'C']
 richie = Student('Richie', 'Young', courses_1)
