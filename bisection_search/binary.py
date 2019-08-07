@@ -18,7 +18,7 @@ def create_list(max_val):
         arr.append(num)
     return arr
 
-l = [1,2,3,4,5,6,7,8,9,10]
+l = create_list(10)
 
-num_to_search = 6
-print(bisection_iter(num_to_search, l))
+for num in range(16):
+    print(bisection_iter(num, l))
