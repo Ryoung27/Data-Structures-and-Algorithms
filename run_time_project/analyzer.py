@@ -1,4 +1,5 @@
-import demo
+import time
+from demo import quicksort, bubble_sort
 import random
 
 def create_random_list(size, max_val):
@@ -10,4 +11,13 @@ def create_random_list(size, max_val):
 size = int(input("What size list do you want to create?"))
 max_val = int(input("What is the max value?"))
 
-print(create_random_list(size, max_val))
+l = create_random_list(size, max_val)
+print(l)
+tic = time.time()
+print(quicksort(l))
+toc = time.time()
+print("Elapsed time -> ", toc-tic)
+tic = time.time()
+print(bubble_sort(l))
+toc = time.time()
+print("Elapsed time -> ", toc-tic)
